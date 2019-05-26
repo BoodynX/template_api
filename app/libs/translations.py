@@ -7,12 +7,11 @@ If language changes, set `libs.strings.default_locale` and run `libs.strings.ref
 """
 import json
 
-default_locale = "en-us"
 supported_locales = ("en-us",)
 cached_strings = {}
 
 
-def refresh(locale: str = default_locale):
+def load_translation(locale: str):
     if locale not in supported_locales:
         raise ValueError
 
