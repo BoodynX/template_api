@@ -9,6 +9,7 @@ verify_ssl = true
 flask = "==1.0.*"
 flask-restful = "==0.3.*"
 python-dotenv = "==0.10.*"
+flask-injector = "==0.12.0"
 
 [requires]
 python_version = "3.7"
