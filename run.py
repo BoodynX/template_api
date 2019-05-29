@@ -12,7 +12,7 @@ load_dotenv(".env", verbose=True)
 load_translation(os.environ.get("DEFAULT_LOCALE", "en-us"))
 
 flask = Flask(__name__)
-flask.config['DEBUG'] = os.environ.get("DEBUG")
+flask.debug = os.environ.get("DEBUG")
 
 routes(flask)
 
