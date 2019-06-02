@@ -2,6 +2,7 @@
   <dictionary name="tomas">
     <words>
       <w>gettext</w>
+      <w>tablename</w>
     </words>
   </dictionary>
 </component>
