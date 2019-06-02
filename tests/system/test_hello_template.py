@@ -1,9 +1,9 @@
 import json
 
-from tests.system.base_system_test import BaseSystemTest
+from tests.app_test import AppTest
 
 
-class TestHelloTemplate(BaseSystemTest):
+class TestHelloTemplate(AppTest):
 
     def test_home(self):
         with self.app_client() as client:

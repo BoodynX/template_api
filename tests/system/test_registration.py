@@ -1,7 +1,7 @@
-from tests.system.base_system_test import BaseSystemTest
+from tests.app_test import AppTest
 
 
-class TestRegistration(BaseSystemTest):
+class TestRegistration(AppTest):
 
     def test_submit_for_an_account(self):
         with self.app_client() as client:
