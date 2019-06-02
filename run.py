@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 from flask import Flask
 
+from app.bootstrap.db import db
 from app.libs.translations import load_translation
 from app.routes import routes
 
@@ -17,4 +18,5 @@ flask.debug = os.environ.get("DEBUG")
 routes(flask)
 
 if __name__ == '__main__':
+    db.init_app(flask)
     flask.run(port=5000)
