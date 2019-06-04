@@ -1,6 +1,6 @@
 from flask_restful import Resource
 
-from app.libs.translations import gettext
+from app.framework.translations import gettext
 
 
 class Home(Resource):

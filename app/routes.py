@@ -5,7 +5,7 @@ from app.resources.home import Home
 from app.resources.user.registration import Registration
 
 
-def routes(flask: Flask):
+def load_routes(flask: Flask):
     api = Api(flask)
 
     api.add_resource(Home, '/')
