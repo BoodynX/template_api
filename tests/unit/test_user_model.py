@@ -5,7 +5,7 @@ USER_NAME = 'Test User'
 PASSWORD = 'Test Password'
 
 
-class UserTest(BaseTest):
+class TestUserModel(BaseTest):
     def test_create_user(self):
         user = UserModel(USER_NAME, PASSWORD)
 
