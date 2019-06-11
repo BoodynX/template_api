@@ -10,6 +10,6 @@ class TestHelloTemplate(AppTest):
             response = client.get('/')
             self.assertEqual(response.status_code, 200)
             self.assertDictEqual(
-                {'message': 'Hello Template!'},
-                json.loads(response.data)
+                json.loads(response.data),
+                {'message': 'Hello Template!'}
             )
