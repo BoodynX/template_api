@@ -1,9 +1,9 @@
 from app.entities.user import User
-from app.schemas.user_post import UserRegistrationSchema
+from app.schemas.user_registration_schema import UserRegistrationSchema
 from tests.app_test import AppTest
 
 
-class TestRegistrationRequestValidation(AppTest):
+class TestUserRegistrationSchema(AppTest):
 
     def test_registration_schema(self):
         registration_form = {'username': 'Test Username', 'password': 'Test Password'}
