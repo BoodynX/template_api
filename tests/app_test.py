@@ -1,4 +1,4 @@
-from app.framework.db import db
+from app.framework.database import db
 from run import flask
 from tests.base_test import BaseTest
 

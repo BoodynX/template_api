@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 from flask import Flask
 
-from app.framework.db import db
+from app.framework.database import db
 from app.framework.translations import load_translation
 from app.routes import load_routes
 

@@ -1,7 +1,8 @@
 from datetime import datetime
+
 from sqlalchemy import DateTime
 
-from app.framework.db import db
+from app.framework.database import db
 
 
 class UserModel(db.Model):
@@ -12,18 +13,6 @@ class UserModel(db.Model):
     password = db.Column(db.String(80))
     created_at = db.Column(DateTime, default=datetime.utcnow)
 
-    def __init__(self, username, password):
+    def __init__(self, username: str = None, password: str = None):
         self.username = username
         self.password = password
-
-    def save_to_db(self) -> None:
-        db.session.add(self)
-        db.session.commit()
-
-    @classmethod
-    def find_by_username(cls, username: str) -> "UserModel":
-        return cls.query.filter_by(username=username).first()
-
-    @classmethod
-    def find_by_id(cls, _id) -> "UserModel":
-        return cls.query.filter_by(id=_id).first()
