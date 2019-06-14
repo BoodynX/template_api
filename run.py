@@ -32,11 +32,4 @@ load_routes(flask)
 
 if __name__ == '__main__':
     db.init_app(flask)
-
-    # if flask.debug:
-    #     @flask.before_first_request
-    #     # Create tables if they don't exist
-    #     def create_tables():
-    #         db.create_all()
-
     flask.run(port=5000)
