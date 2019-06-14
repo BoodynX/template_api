@@ -6,7 +6,7 @@ from marshmallow import ValidationError
 
 from app.framework.database import db
 from app.framework.translations import load_translation
-from app.routes import load_routes
+from app.routes import Routes
 
 # setting up consistent working directory in case test are run
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
@@ -28,7 +28,7 @@ def handle_marshmallow_validation(err):
 
 
 load_translation(os.environ.get("DEFAULT_LOCALE", "en-us"))
-load_routes(flask)
+Routes.load_routes(flask)
 
 if __name__ == '__main__':
     db.init_app(flask)
