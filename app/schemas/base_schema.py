@@ -1,8 +1,8 @@
 from marshmallow import Schema
 
 
-class Validator(Schema):
+class BaseSchema(Schema):
     @classmethod
     def handle_request(cls, json: dict):
-        validator = cls()
-        return validator.load(json)
+        schema = cls()
+        return schema.load(json)
