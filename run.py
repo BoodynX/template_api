@@ -28,7 +28,7 @@ def handle_marshmallow_validation(err):
 
 
 load_translation(os.environ.get("DEFAULT_LOCALE", "en-us"))
-Routes.load_routes(flask)
+Routes.load(flask)
 
 if __name__ == '__main__':
     db.init_app(flask)

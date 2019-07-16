@@ -10,7 +10,7 @@ class Routes:
     USER_REGISTRATION = '/user/registration'
 
     @classmethod
-    def load_routes(cls, flask: Flask):
+    def load(cls, flask: Flask):
         api = Api(flask)
 
         api.add_resource(Home, cls.HOME)
