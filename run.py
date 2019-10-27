@@ -1,10 +1,11 @@
 import os
 
 from dotenv import load_dotenv
-from flask import Flask, jsonify
-from marshmallow import ValidationError
+from flask import Flask
 
 from app.framework.database import db
+from app.framework.database_loader import DatabaseLoader
+from app.framework.error_handlers import ErrorHandlers
 from app.framework.translations import load_translation
 from app.routes import Routes
 
@@ -15,19 +16,10 @@ load_dotenv(".env", verbose=True)
 flask = Flask(__name__)
 flask.config.from_pyfile('config.py')
 
-
-@flask.before_first_request
-# Create tables if they don't exist
-def create_tables():
-    db.create_all()
-
-
-@flask.errorhandler(ValidationError)
-def handle_marshmallow_validation(err):
-    return jsonify(err.messages), 400
-
-
+# Load framework components
 load_translation(os.environ.get("DEFAULT_LOCALE", "en-us"))
+DatabaseLoader.load(flask)
+ErrorHandlers.load(flask)
 Routes.load(flask)
 
 if __name__ == '__main__':
