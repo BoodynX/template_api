@@ -1,5 +1,5 @@
 from app.models.user import UserModel
-from tests.base_test import BaseTest
+from tests.framework.tests_base_classes.base_test import BaseTest
 
 USER_NAME = 'username TestUserModel'
 PASSWORD = 'password TestUserModel'

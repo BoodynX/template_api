@@ -1,6 +1,6 @@
 from app.framework.database import db
 from run import flask
-from tests.base_test import BaseTest
+from tests.framework.tests_base_classes.base_test import BaseTest
 
 
 class AppTest(BaseTest):

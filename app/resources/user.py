@@ -5,7 +5,7 @@ from app.repositories.user import UserRepository
 from app.schemas.user_registration_schema import UserRegistrationSchema
 
 
-class UserRegistration(Resource):
+class UsersResource(Resource):
 
     def post(self):
         user = UserRegistrationSchema.handle_request(request.get_json())

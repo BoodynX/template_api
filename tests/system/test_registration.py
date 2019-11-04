@@ -2,7 +2,7 @@ import json
 
 from app.repositories.user import UserRepository
 from app.routes import Routes
-from tests.app_test import AppTest
+from tests.framework.tests_base_classes.app_test import AppTest
 
 USER_NAME = 'TestRegistrationUserName'
 PASSWORD = 'TestRegistrationPassword'

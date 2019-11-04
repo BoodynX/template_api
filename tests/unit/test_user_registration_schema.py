@@ -1,6 +1,6 @@
 from app.entities.user import User
 from app.schemas.user_registration_schema import UserRegistrationSchema
-from tests.app_test import AppTest
+from tests.framework.tests_base_classes.app_test import AppTest
 
 USER_NAME = 'usernameTestUserRegistrationSchema'
 PASSWORD = 'passwordTestUserRegistrationSchema'

@@ -1,7 +1,7 @@
 import json
 
 from app.routes import Routes
-from tests.app_test import AppTest
+from tests.framework.tests_base_classes.app_test import AppTest
 
 
 class TestHelloTemplate(AppTest):

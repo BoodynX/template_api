@@ -1,6 +1,6 @@
 from app.entities.user import User
 from app.repositories.user import UserRepository
-from tests.app_test import AppTest
+from tests.framework.tests_base_classes.app_test import AppTest
 
 USER_ID = 1
 PASSWORD = 'Test Password'
