@@ -14,7 +14,7 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 load_dotenv(".env", verbose=True)
 
 flask = Flask(__name__)
-flask.config.from_pyfile('config.py')
+flask.config.from_pyfile('flask_config.py')
 
 # Load framework components
 load_translation(os.environ.get("DEFAULT_LOCALE", "en-us"))
