@@ -2,6 +2,7 @@ import json
 
 from app.repositories.user import UserRepository
 from app.routes import Routes
+from app_config import PASSWORD_MIN_LENGTH, USERNAME_MIN_LENGTH
 from tests.framework.tests_base_classes.app_test import AppTest
 
 USER_NAME = 'TestRegistrationUserName'
@@ -29,9 +30,8 @@ class TestRegistration(AppTest):
                     {
                         "error": "invalid_parameters",
                         "parameters": {
-                            "username": [
-                                "Invalid value."
-                            ]
+                            "username":  ['Invalid value.',
+                                          f"Shorter than minimum length {USERNAME_MIN_LENGTH}."]
                         }
                     },
                     json.loads(response.data)
@@ -46,9 +46,7 @@ class TestRegistration(AppTest):
                     {
                         "error": "invalid_parameters",
                         "parameters": {
-                            "password": [
-                                "Invalid value."
-                            ]
+                            "password": [f"Shorter than minimum length {PASSWORD_MIN_LENGTH}."]
                         }
                     },
                     json.loads(response.data)
